@@ -29,7 +29,7 @@ public class UserServlet extends HttpServlet {
             throws ServletException, IOException {
         
         UserService us = new UserService();
-        RoleService rs= new RoleService();
+        RoleService rs = new RoleService();
         String action = request.getParameter("action");
 
         try{
@@ -55,7 +55,7 @@ public class UserServlet extends HttpServlet {
             
         } catch (Exception ex){
             Logger.getLogger(UserServlet.class.getName()).log(Level.SEVERE, null, ex);
-            request.setAttribute("errorMessage", "error");
+            request.setAttribute("errorMessage", "Could not load users");
         }
         
     getServletContext().getRequestDispatcher("/WEB-INF/users.jsp").forward(request, response);
@@ -88,7 +88,7 @@ public class UserServlet extends HttpServlet {
  
         } catch (Exception ex){
             Logger.getLogger(UserServlet.class.getName()).log(Level.SEVERE, null, ex);
-            request.setAttribute("errorMessage", "errorcatch");
+            request.setAttribute("errorMessage", "Could not update or add");
         }
         
         getServletContext().getRequestDispatcher("/WEB-INF/users.jsp").forward(request, response);

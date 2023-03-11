@@ -22,7 +22,7 @@ public class RoleService {
     }
     
     public int get(Role role) throws Exception {
-        String name = role.getRoleName();
+        String name = role.getName();
         if (name.equals("system admin")) {
             return 1;
         } else {

@@ -31,7 +31,7 @@
                     <td>${user.firstName}</td>
                     <td>${user.lastName}</td>
                     <c:choose>
-                            <c:when test="${user.getRole().getRoleID() == 1}">
+                            <c:when test="${user.getRole().getID() == 1}">
                                 <td>system admin</td>
                             </c:when>
                             <c:otherwise>
@@ -58,14 +58,14 @@
                 Email: <input type="text" name="email" required> <br>
                 First Name: <input type="text" name="firstName" required> <br>
                 Last Name: <input type="text" name="lastName" required> <br>
-                Password: <input type="text" name="password" required> <br>
+                Password: <input type="password" name="password" required> <br>
                 Role: <select name="role">
                         <option value="system admin">system admin</option>
                         <option value="regular user">regular user</option>
                       </select> <br>
                       
                       <input type="hidden" name="action" value="add">
-                <input type="submit"value="Add User">
+                      <input type="submit"value="Add User">
             </form>
         </c:if> 
           
